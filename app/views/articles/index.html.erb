@@ -14,8 +14,12 @@
           <tr>
             <td><%= article.title %> </td>
             <td><%= article.description %> </td>
-            <td>ACTION</td>
-          </tr>
+            <td><%= link_to 'DELETE', article_path(article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?", } %>
+                <%= link_to 'SHOW', article_path(article) %>
+                <%= link_to "EDIT", edit_article_path(article) %>
+            </td>
+          </tr> 
        <% end %>
     </tbody>
 </table>
+<p> <%= link_to "CREATE", new_article_path%></p>
